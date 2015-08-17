@@ -2,9 +2,7 @@ var gulp = require("gulp");
 var gulptosync = require("../");
 
 gulp.task("move1", function(){
-    gulp.src("./src/file1.js")
-        .pipe()
-        .pipe(gulp.dest("./dest"))
+    gulp.src("./src/file1.js").pipe(gulp.dest("./dest"))
 });
 
 gulp.task("move2", function(){

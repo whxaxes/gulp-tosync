@@ -1,5 +1,6 @@
 var gulp = require("gulp");
 var gutil = require("gulp-util");
+var Promise = require("promise");
 var events = require("events");
 var emitter = new events.EventEmitter();
 
