@@ -46,18 +46,16 @@ module.exports = function(){
 
             // record the stopped task count
             var count = 0;
-
-            // event names
             var eventName = "sync_task_stop_" + (eventCount++);
 
             tasks.eventName = eventName;
 
-            // being triggered when the task of tasks was running out
+            // being triggered when the task of tasks runs out
             emitter.on(eventName, function(){
 
                 if(count === tasks.length){
 
-                    // reset the seq of gulp
+                    // reset gulp.seq
                     gulp.seq = (runningTasks.pop()).seq;
 
                     resolve();
@@ -85,7 +83,7 @@ gulp.emit = function(events, taskArg){
         oldemit.apply(this, arguments);
 
     }else {
-        // signed task_stop events
+
         if(events === "task_stop" && runningTasks.length){
 
             // get the latest tasks
@@ -98,7 +96,7 @@ gulp.emit = function(events, taskArg){
             } else {
                 emitter.emit(tasks.eventName);
             }
-
         }
+
     }
 };
