@@ -16,7 +16,7 @@ var gulptosync = require("gulp-tosync")
 
 ### demo_1:
 ```
-gulp.task("default", gulpSync(["build-css", "build-js", "build-img"], "build-html"));
+gulp.task("default", gulptosync(["build-css", "build-js", "build-img"], "build-html"));
 ```
 #### results:
 ```
@@ -36,8 +36,8 @@ E:\GitHub\myblog>gulp
 
 ### demo_2:
 ```
-gulp.task("test", gulpSync(["build-js", "build-img"]));
-gulp.task("default", gulpSync(["build-css", "test"], "build-html"));
+gulp.task("test", gulptosync(["build-js", "build-img"]));
+gulp.task("default", gulptosync(["build-css", "test"], "build-html"));
 ```
 
 #### results:
